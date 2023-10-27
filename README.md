@@ -1,4 +1,4 @@
-# QRkot_spreadseets
+# QRkot_spreadsheets
 
 ## Application for the Cat Charity Fund + Google Spreadsheet Report
 
