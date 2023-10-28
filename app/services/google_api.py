@@ -20,13 +20,15 @@ async def spreadsheets_create(wrapper_services: Aiogoogle) -> str:
     """Create a Google Spreadsheet for charities."""
     service = await wrapper_services.discover('sheets', 'v4')
     spreadsheet_body = {
-        'properties': {'title': f'{DOC_TITLE} - {CURRENT_DATETIME}', 'locale': 'ru_RU'},
+        'properties': {'title': f'{DOC_TITLE} - {CURRENT_DATETIME}',
+                       'locale': 'ru_RU'},
         'sheets': [
             {'properties': {'sheetType': 'GRID',
                             'sheetId': 0,
                             'title': DOC_TITLE,
                             'gridProperties': {'rowCount': ROWS,
-                                               'columnCount': len(TABLE_HEADERS)}}}
+                                               'columnCount': len(
+                                                   TABLE_HEADERS)}}}
         ]
     }
     response = await wrapper_services.as_service_account(
