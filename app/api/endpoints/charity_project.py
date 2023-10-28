@@ -20,7 +20,9 @@ router = APIRouter()
 @router.get('/',
             response_model=List[CharityDB],
             response_model_exclude_none=True)
-async def get_all_charities(session: AsyncSession = Depends(get_async_session)):
+async def get_all_charities(
+    session: AsyncSession = Depends(get_async_session)
+):
     """Get all charities."""
     charities = await charity_crud.get_all(session)
     if not charities:

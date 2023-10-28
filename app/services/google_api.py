@@ -6,7 +6,12 @@ from app.models import CharityProject
 
 DATETIME_FORMAT = '%Y/%m/%d %H:%M:%S'
 CURRENT_DATETIME = datetime.now().strftime(DATETIME_FORMAT)
-TABLE_HEADERS = ['Название проекта', 'Описание', 'Дата создания', 'Дата закрытия']
+TABLE_HEADERS = [
+    'Название проекта',
+    'Описание',
+    'Дата создания',
+    'Дата закрытия'
+]
 ROWS = 50
 DOC_TITLE = 'Отчет'
 
