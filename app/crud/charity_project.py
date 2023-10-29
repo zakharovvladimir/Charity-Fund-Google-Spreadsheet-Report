@@ -32,7 +32,8 @@ class CharityCRUD(CRUDBase):
                                   project_id: int,
                                   session: AsyncSession) -> int:
         """Get the invested amount of a charity."""
-        query = select([self.model.invested_amount]).where(self.model.id == project_id)
+        query = select(
+            [self.model.invested_amount]).where(self.model.id == project_id)
         result = await session.execute(query)
         return result.scalar_one()
 
@@ -40,7 +41,8 @@ class CharityCRUD(CRUDBase):
                                  project_id: int,
                                  session: AsyncSession) -> bool:
         """Check if a charity is fully invested."""
-        query = select([self.model.fully_invested]).where(self.model.id == project_id)
+        query = select(
+            [self.model.fully_invested]).where(self.model.id == project_id)
         result = await session.execute(query)
         return result.scalar_one()
 
