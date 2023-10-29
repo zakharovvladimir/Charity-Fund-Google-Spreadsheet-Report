@@ -33,13 +33,16 @@ async def investing_funds(
 async def determine_investment_model(
     investment_object: Union[CharityProject, Donation],
     session: AsyncSession
-) -> Tuple[Union[CharityProject, Donation], List[Union[CharityProject, Donation]]]:
+) -> Tuple[
+    Union[CharityProject, Donation], List[
+        Union[CharityProject, Donation]]]:
     """Determine the Charity/Donation model with amounts control."""
     if isinstance(investment_object, Donation):
         invested_model = CharityProject
     else:
         invested_model = Donation
-    query = select(invested_model).where(invested_model.fully_invested == False) # noqa
+    query = select(invested_model).where(
+        invested_model.fully_invested == False) # noqa
     not_invested_objects = await session.execute(query)
     not_invested_objects = not_invested_objects.scalars().all()
     return invested_model, not_invested_objects

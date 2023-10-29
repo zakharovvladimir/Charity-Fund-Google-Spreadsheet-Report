@@ -8,7 +8,9 @@ from app.api import validators
 from app.core.db import get_async_session
 from app.core.user import current_superuser
 from app.crud.charity_project import charity_crud
-from app.schemas.charity_project import CharityCreate, CharityDB, CharityUpdate
+from app.schemas.charity_project import (CharityCreate,
+                                         CharityDB,
+                                         CharityUpdate)
 from app.services.investment import investing_funds
 
 NOT_FOUND_CHARITIES = 'Созданные проекты не найдены'

@@ -33,7 +33,8 @@ async def check_full_amount_update(project_id: int,
                                    updating_full_amount: int,
                                    session: AsyncSession):
     """Check a charity's full amount funding validity."""
-    invested_amount = await charity_crud.get_invested_amount(project_id, session)
+    invested_amount = await charity_crud.get_invested_amount(
+        project_id, session)
     if updating_full_amount < invested_amount:
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
@@ -43,7 +44,8 @@ async def check_full_amount_update(project_id: int,
 
 async def charity_closed(project_id: int, session: AsyncSession):
     """Check if a charity is funded and closed."""
-    project_closed = await charity_crud.get_fully_invested(project_id, session)
+    project_closed = await charity_crud.get_fully_invested(
+        project_id, session)
     if project_closed:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
