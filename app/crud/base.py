@@ -1,11 +1,12 @@
 from typing import Generic, List, Optional, Type, TypeVar
 
-from app.core.db import Base
-from app.models import User
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.core.db import Base
+from app.models import User
 
 ModelType = TypeVar('ModelType', bound=Base)
 CreateSchemaType = TypeVar('CreateSchemaType', bound=BaseModel)
@@ -67,7 +68,8 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         await session.commit()
         return db_object
 
-    async def get_not_invested(self, session: AsyncSession) -> List[ModelType]:
+    async def get_not_invested(self,
+                               session: AsyncSession) -> List[ModelType]:
         """Get not fully invested objects."""
         query = select(self.model).where(self.model.fully_invested == 0)
         all_not_invested = await session.execute(query)

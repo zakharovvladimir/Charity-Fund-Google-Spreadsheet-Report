@@ -1,8 +1,9 @@
 from typing import Optional
 
+from sqlalchemy import select
+
 from app.crud.base import AsyncSession, CRUDBase, ModelType
 from app.models.charity_project import CharityProject
-from sqlalchemy import select
 
 
 class CharityCRUD(CRUDBase):
