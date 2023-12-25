@@ -1,6 +1,6 @@
 # Charity Fund with Google Spreadsheet Report
 
-## Application for the Cat Charity Fund + Google Spreadsheet Report
+## Application for Charity Fund + Google Spreadsheet Report
 
 ### Description 
 
