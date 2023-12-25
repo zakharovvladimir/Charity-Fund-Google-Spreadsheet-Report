@@ -4,7 +4,7 @@
 
 ### Description 
 
-The Foundation collects donations for various targeted projects: for medical care, for setting up a cat colony in the basement, for food for abandoned cats - for any purpose related to the support of the feline population. + Opportunity to create reports to Google Spreadsheets.
+The Foundation collects donations for various targeted projects: for medical care, for setting up pets colony in the basement, for food for abandoned pets - for any purpose related to the support of the feline population. + Opportunity to create reports to Google Spreadsheets.
 
 ### Techs
 
