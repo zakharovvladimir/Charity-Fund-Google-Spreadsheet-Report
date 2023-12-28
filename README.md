@@ -56,3 +56,6 @@ CLIENT_X509_CERT_URL=''
 ### Author
 
 Vladimir Zakharov // vladimir.zakharov.s@yandex.ru
+
+### License
+[MIT](https://choosealicense.com/licenses/mit/)
